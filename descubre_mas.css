@@ -1,0 +1,114 @@
+/* Estilos para el lightbox */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Encima de otros elementos */
+    cursor: pointer; /* Indica que se puede cerrar */
+    overflow: hidden; /* Ocultar contenido desbordado */
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(0.8); /* Imagen inicialmente más pequeña */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Efecto suave */
+    opacity: 0.95;
+}
+
+.lightbox img:focus,
+.lightbox img:hover {
+    transform: scale(1); /* Imagen al tamaño completo */
+    opacity: 1;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px; /* Ajuste del ancho máximo */
+    margin: 0 auto;
+    padding: 15px; /* Reducido espacio alrededor del contenedor */
+}
+
+main {
+    padding: 20px 0; /* Reducido espacio arriba y abajo del main */
+}
+
+/* Estilos para la sección de inspiración */
+.inspiration-section {
+    text-align: center;
+    padding: 20px 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.inspiration-section h2 {
+    font-size: 2.2em; /* Ajuste del tamaño del título */
+    color: #333;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamaño mínimo adaptativo */
+    gap: 20px; /* Espacio entre artículos */
+}
+
+/* Estilos para cada elemento de inspiración */
+.inspiration-item {
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    cursor: pointer;
+}
+
+.inspiration-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hover */
+}
+
+.inspiration-image {
+    width: 100%;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.inspiration-image:hover {
+    opacity: 0.85;
+}
+
+.inspiration-item h3 {
+    font-size: 1.3em;
+    margin: 12px 0;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.inspiration-item p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}

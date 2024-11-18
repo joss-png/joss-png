@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joss Fashion es tu guía de moda para explorar las últimas tendencias y encontrar inspiración para tu estilo personal.">
+    <meta name="keywords" content="moda, tendencias, estilo, fashion, Joss Fashion, tendencias actuales">
+    <title>Joss Fashion - Tendencias y Estilo</title>
+    <link rel="stylesheet" href="jose.css"> <!-- Archivo CSS externo -->
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="logo.jpg" alt="Logotipo de Joss Fashion">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="descubre_mas.html">Inspiración</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <h1>Explora las Últimas Tendencias</h1>
+            <p>Encuentra inspiración para tu estilo personal con nuestras selecciones de moda.</p>
+            <a href="descubre_mas.html" class="btn-1">Descubre Más</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="trend-section container">
+            <h2>Tendencias Actuales</h2>
+            <div class="trend-grid">
+                <article class="trend-item">
+                    <img src="deportiva.png" alt="Abrigo llamativo y texturizado, tendencia 2024">
+                    <h3>Abrigos llamativos y texturizados</h3>
+                    <p>Los abrigos de gran tamaño con texturas suaves y envolventes están en auge.</p>
+                </article>
+                <article class="trend-item">
+                    <img src="image.png" alt="Vestido bohemio y floral, tendencia 2024">
+                    <h3>Vestidos Bohemios</h3>
+                    <p>Vestidos con patrones florales y siluetas sueltas para un estilo bohemio.</p>
+                </article>
+                <!-- Más artículos de tendencia -->
+            </div>
+        </section>
+
+        <section class="inspiration-section container">
+            <h2>Inspiración para tu Estilo</h2>
+            <div class="inspiration-grid">
+                <article class="inspiration-item">
+                    <img src="outfit_horiz.jpg" alt="Ideas de outfit, Inspiración 1">
+                    <h3>Inspiración 1</h3>
+                    <p>Ideas de outfits y consejos para incorporar esta inspiración en tu propio estilo.</p>
+                </article>
+                <article class="inspiration-item">
+                    <img src="camisa_horiz.jpg" alt="Camisa y pantalón, Inspiración 2">
+                    <h3>Camisa y pantalón casual</h3>
+                    <p>Una combinación clásica y versátil para cualquier ocasión.</p>
+                </article>
+                <!-- Más artículos de inspiración -->
+            </div>
+        </section>
+
+        <section class="contact-section container" id="contact">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Correo Electrónico" required>
+                <textarea placeholder="Tu Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Joss Fashion. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modo oscuro/claro con persistencia en almacenamiento local
+        document.getElementById("toggle-dark-mode").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+        }
+    </script>
+</body>
+</html>

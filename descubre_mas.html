@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiración de Estilo</title>
+    <link rel="stylesheet" href="descubre_mas.css">
+    <style>
+        /* Estilos para el lightbox */
+        .lightbox {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Encima de otros elementos */
+            cursor: pointer; /* Indica que se puede cerrar */
+        }
+
+        .lightbox img {
+            max-width: 90%; /* Ajustado para ser más grande */
+            max-height: 90%; /* Ajustado para ser más grande */
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease; /* Efecto suave */
+        }
+
+        .lightbox img:hover {
+            transform: scale(1.1); /* Suave ampliación en hover */
+        }
+
+        /* Estilos de la galería */
+        .inspiration-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .inspiration-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .inspiration-item:hover {
+            transform: scale(1.03);
+        }
+
+        .inspiration-image {
+            width: 100%;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .inspiration-image:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="inspiration-section container">
+        <h2>Inspiración para tu Estilo</h2>
+        <div class="inspiration-grid">
+            <article class="inspiration-item">
+                <img src="joseph.jpeg" alt="Ideas de outfit, Inspiración 1" class="inspiration-image">
+                <h3>Inspiración 1</h3>
+                <p>
+                    <strong>Tendencias de Moda Sostenible</strong><br>
+                    Resalta marcas de moda sostenible y cómo integrarlas en tu guardarropa.
+                    <br>Imagen: Un outfit hecho de materiales reciclados.
+                    <br>Consejo: "Opta por prendas de segunda mano para un estilo único y responsable."
+                </p>
+            </article>
+            <article class="inspiration-item">
+                <img src="vestido.jpeg" alt="Ideas de outfit, Inspiración 2" class="inspiration-image">
+                <h3>Inspiración 2</h3>
+                <p>Descripción de la inspiración 2.</p>
+            </article>
+            <article class="inspiration-item">
+                <img src="ye.jpeg" alt="Ideas de outfit, Inspiración 3" class="inspiration-image">
+                <h3>Inspiración 3</h3>
+                <p>Ideas de outfits y consejos para incorporar esta inspiración en tu propio estilo.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img id="lightboxImage" src="" alt="Imagen ampliada">
+    </div>
+
+    <script>
+        // Selecciona todos los elementos de imagen de inspiración
+        const inspirationImages = document.querySelectorAll('.inspiration-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+
+        // Añadir evento a cada imagen para abrir el lightbox
+        inspirationImages.forEach(image => {
+            image.addEventListener('click', function() {
+                lightboxImage.src = this.src; // Cambia la imagen del lightbox a la que se hizo clic
+                lightbox.style.display = 'flex'; // Muestra el lightbox
+            });
+        });
+
+        // Evento para cerrar el lightbox al hacer clic fuera de la imagen
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImage) { // Si el clic no es en la imagen
+                lightbox.style.display = 'none'; // Oculta el lightbox
+            }
+        });
+    </script>
+
+</main>
+
+</body>
+</html>
